@@ -22,13 +22,13 @@ public class MainApp {
         userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
         userService.add(new User("User5", "Lastname5", "user5@mail.ru", new Car(1, "BMW")));
         userService.add(new User("User6", "Lastname6", "user6@mail.ru", new Car(2, "Audi")));
-        userService.add(new User("User7", "Lastname7", "user7@mail.ru", new Car(2, "Audi")));
+
 
         List<User> users = userService.listUsers();
         printList(users);
 
-        List<User> userByCarModelAndSeries = userService.getUserByCarModelAndSeries(2, "Audi");
-        printList(userByCarModelAndSeries);
+        User userByCarModelAndSeries = userService.getUserByCarModelAndSeries(2, "Audi").get();
+        System.out.println(userByCarModelAndSeries);
 
         context.close();
     }

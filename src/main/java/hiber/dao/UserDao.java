@@ -3,11 +3,12 @@ package hiber.dao;
 import hiber.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserDao {
     void add(User user);
 
     List<User> listUsers();
 
-    List<User> getUserByCarModelAndSeries(int carSeries, String model);
+    Optional<User> getUserByCarModelAndSeries(int carSeries, String model);
 }
